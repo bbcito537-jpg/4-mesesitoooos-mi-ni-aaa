@@ -1,0 +1,1 @@
+window.GAME_VERSION='9.0-final-rebuild';

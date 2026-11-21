@@ -1,0 +1,1 @@
+window.CONFIG_GAME={version:'9.0',difficulty:4,gameplayMinutes:'4-7',orientation:'landscape-only-gameplay'};

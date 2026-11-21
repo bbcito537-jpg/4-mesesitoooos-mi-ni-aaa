@@ -1,0 +1,1 @@
+window.CONFIG_CONTROLS={joystick:true,useButton:true,keyboard:true};

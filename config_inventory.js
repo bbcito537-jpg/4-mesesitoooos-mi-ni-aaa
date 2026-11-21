@@ -1,0 +1,1 @@
+window.CONFIG_INVENTORY={slots:['key','note','photo','flower']};

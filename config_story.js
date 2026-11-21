@@ -1,0 +1,1 @@
+window.CONFIG_STORY={portraitFriendly:true,fit:'contain',poems:true};

@@ -1,0 +1,1 @@
+window.CONFIG_VISUALS={style:'pixel-art-comic',photosUsedDirectly:false,spriteScale:'large'};

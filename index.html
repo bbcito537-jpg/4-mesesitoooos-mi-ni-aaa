@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#130c14">
+<title>Cuatro meses</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+<div id="rotateNotice"><div class="rotate-card"><div class="rotate-icon">↻</div><h2>Gira el teléfono</h2><p>Solo el escape room se juega en horizontal.</p></div></div>
+
+<section id="start" class="screen active">
+  <div class="start-bg"></div><div class="start-vignette"></div>
+  <div class="start-card"><div class="tiny">ANGELO × ISABELLA</div><h1>CUATRO MESES</h1><p>Una historia que todavía se está escribiendo.</p><button id="startBtn" class="primary">COMENZAR</button><small>Toca para activar la música.</small></div>
+</section>
+
+<section id="movie" class="screen movie">
+  <div id="movieBackdrop" class="movie-backdrop"></div>
+  <div class="movie-inner">
+    <div class="story-card"><img id="movieImage" alt=""></div>
+    <div class="story-copy"><div id="movieTitle" class="story-title"></div><div id="movieText" class="story-text"></div><div id="moviePoem" class="story-poem"></div></div>
+  </div>
+  <div class="movie-progress"><div id="movieBar"></div></div>
+  <button id="skipMovie" class="skip">Saltar</button>
+</section>
+
+<section id="letter" class="screen letter-screen">
+  <article class="parchment"><div class="tiny dark">PARA ISABELLA</div><h2>Mi amor,</h2><div id="letterCopy" class="letter-copy"></div><div class="center"><button id="letterNext" class="primary dark-btn">SEGUIR</button></div></article>
+</section>
+
+<section id="memories" class="screen memory-screen">
+  <div class="memory-title"><div class="tiny">ANTES DEL ÚLTIMO CAPÍTULO</div><h2>Hay recuerdos que se vuelven constelaciones.</h2><p>Toca los cinco puntos.</p></div>
+  <div class="constellation">
+    <button class="star s1"><span>La llamada</span></button><button class="star s2"><span>Hinkley</span></button><button class="star s3"><span>12:26</span></button><button class="star s4"><span>La primera vez</span></button><button class="star s5"><span>Nosotros</span></button>
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M16 34 L34 59 L52 31 L70 61 L84 34"/></svg>
+  </div>
+  <button id="memoryNext" class="primary memory-next">ENTRAR AL JUEGO</button>
+</section>
+
+<section id="game" class="screen game-screen">
+<div id="gameStage" class="game-stage">
+  <img class="room" src="game_room.png" alt="">
+  <div id="player" class="player"></div>
+
+  <div class="hotspot globe"></div><div class="hotspot guitar"></div><div class="hotspot flowers"></div><div class="hotspot chest"></div><div class="hotspot desk"></div><div class="hotspot cat"></div>
+
+  <div id="mask1" class="slot-mask m1"></div><div id="mask2" class="slot-mask m2"></div><div id="mask3" class="slot-mask m3"></div><div id="mask4" class="slot-mask m4"></div>
+  <img id="slotKey" class="slot-icon i1" src="icon_key.png"><img id="slotNote" class="slot-icon i2" src="icon_note.png"><img id="slotPhoto" class="slot-icon i3" src="icon_photo.png"><img id="slotFlower" class="slot-icon i4" src="icon_flower.png">
+
+  <div class="objective-overlay"><div class="quest-title">🔑 The Sunset Room</div><label><span id="checkA">☐</span> Encuentra 3 recuerdos</label><label><span id="checkB">☐</span> Abre el cofre final</label><label><span id="checkC">☐</span> Resuelve el escritorio</label></div>
+
+  <button id="journalBtn" class="top-hot journal" aria-label="Diario"></button><button id="mapBtn" class="top-hot map" aria-label="Mapa"></button><button id="settingsBtn" class="top-hot settings" aria-label="Ajustes"></button>
+  <div id="joystick" class="joystick"><div id="knob" class="knob"></div></div><button id="useBtn" class="use-btn" aria-label="Usar"></button>
+  <div id="message" class="message"></div>
+
+  <div id="flowerPuzzle" class="modal"><div class="modal-card"><h2>La caja de flores</h2><p>La pista dice: “Escoge el color que más se parece a una noche tranquila.”</p><div class="flower-grid"><button data-answer="red">🌺</button><button data-answer="white">🌼</button><button data-answer="purple">💜</button><button data-answer="yellow">🌻</button></div><div id="flowerFeedback"></div><button id="flowerClose" class="primary small-btn">CERRAR</button></div></div>
+
+  <div id="symbolPuzzle" class="modal"><div class="modal-card"><h2>El escritorio</h2><p>Ordena los símbolos como aparecen en el cajón del cuarto.</p><div class="symbol-row"><button data-symbol="moon">☾</button><button data-symbol="star">★</button><button data-symbol="sun">☀</button><button data-symbol="wave">≋</button></div><div id="symbolSequence">_ _ _ _</div><div id="symbolFeedback"></div><button id="symbolReset" class="secondary">REINICIAR</button></div></div>
+
+  <div id="journalModal" class="modal"><div class="modal-card journal-card"><h2>Diario</h2><p>“No todo empezó en persona.”</p><p>“Una mesa en Hinkley se quedó conmigo.”</p><p>“Hay una hora que nunca volvió a ser normal.”</p><button class="primary small-btn modal-close">CERRAR</button></div></div>
+  <div id="mapModal" class="modal"><div class="modal-card"><h2>Mapa de pistas</h2><p>Busca cerca del globo, la guitarra y la caja de flores. Después revisa el cofre y el escritorio.</p><button class="primary small-btn modal-close">CERRAR</button></div></div>
+</div>
+</section>
+
+<section id="timelinePuzzle" class="screen timeline-screen"><h2>Última cerradura</h2><p>Toca estos recuerdos en el orden en que ocurrieron.</p><div class="timeline-grid"><button data-order="2" style="background-image:url('story_hinkley.jpg')"><span>Hinkley</span></button><button data-order="1" style="background-image:url('story_instagram.jpg')"><span>Instagram</span></button><button data-order="3" style="background-image:url('story_1226.jpg')"><span>12:26</span></button></div><div id="timelineFeedback"></div></section>
+
+<section id="codePuzzle" class="screen code-screen"><div class="code-card"><div class="tiny">UNA ÚLTIMA COSA</div><h2>¿Qué hora se quedó con nosotros?</h2><input id="codeInput" inputmode="numeric" maxlength="4" placeholder="____"><button id="codeBtn" class="primary">ABRIR</button><div id="codeFeedback"></div></div></section>
+
+<section id="finale" class="screen finale"><div class="final-bg"></div><div class="final-copy"><div class="tiny">LO LOGRASTE</div><h2>Todo esto era una sorpresa.</h2><p>Tzuyu y tu chinito querían sacarte por un rato de todo lo demás y llevarte a nuestro pequeño mundo.</p><p>Tu chinito nunca va a dejarte sola.</p><button id="giftBtn" class="primary">ABRIR REGALO</button></div></section>
+
+<section id="gift" class="screen gift"><img src="bracelets.jpg" alt="Pulseras"><div class="gift-copy"><div class="tiny">CUATRO MESES</div><h2>Una para ti. Una para mí.</h2><p>Y todavía quedan muchísimas páginas por escribir.</p></div></section>
+</div>
+
+<script src="music.js"></script><script src="story.js"></script><script src="letter.js"></script><script src="audio.js"></script><script src="movie.js"></script><script src="game_state.js"></script><script src="joystick.js"></script><script src="interactions.js"></script><script src="gameplay.js"></script><script src="puzzles.js"></script><script src="app.js"></script>
+</body></html>

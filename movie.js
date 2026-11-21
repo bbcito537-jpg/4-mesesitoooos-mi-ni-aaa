@@ -1,0 +1,5 @@
+
+window.Movie=(()=>{let i=0,t=null,start=0,total=0;const img=()=>document.getElementById('movieImage');
+function show(n){const s=STORY[n];i=n;img().style.opacity=0;setTimeout(()=>{img().src=s.img;document.getElementById('movieBackdrop').style.backgroundImage=`url("${s.img}")`;img().style.opacity=1},120);document.getElementById('movieTitle').textContent=s.title;document.getElementById('movieText').textContent=s.text;document.getElementById('moviePoem').textContent=s.poem;AudioManager.play(s.track);clearTimeout(t);t=setTimeout(()=>n<STORY.length-1?show(n+1):finish(),s.dur*1000)}
+function progress(){if(!document.getElementById('movie').classList.contains('active'))return;const elapsed=(Date.now()-start)/1000;document.getElementById('movieBar').style.width=Math.min(100,elapsed/total*100)+'%';requestAnimationFrame(progress)}
+function begin(){total=STORY.reduce((a,s)=>a+s.dur,0);start=Date.now();show(0);progress()}function finish(){clearTimeout(t);App.show('letter');AudioManager.play('warm')}return{begin,finish}})();

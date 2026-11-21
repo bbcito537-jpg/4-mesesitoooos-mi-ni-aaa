@@ -1,0 +1,1 @@
+window.CONFIG_TRUTHS={carCaller:'friend',carDriver:'friend',parchis:'online',playstation:'simultaneous',hinkleyVideoCall:'phone',chemistry:'online'};
