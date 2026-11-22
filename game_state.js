@@ -1,1 +1,0 @@
-window.G={x:43,y:42,dir:'front',near:null,items:new Set(),flowerSolved:false,key:false,symbolSolved:false,symbolSeq:[],timeline:[]};
